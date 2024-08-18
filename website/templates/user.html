@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block title %}Home{% endblock %}
+{% block body %}
+    <div class="diary">
+        {{ author.username }}
+        <div class="scroll">
+            <table class="entries">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+            {% for diary in author.diary %}
+                <tbody>
+                    <tr>
+                        <th><a class="title_table" href="/read_others/{{ diary.id }}">{{ diary.title }}</a></th>
+                        <th>{{ diary.date }}</th>
+                    </tr>
+                </tbody>
+            {% endfor %}
+            </table>
+        </div>
+    </div>
+{% endblock %}

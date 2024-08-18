@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block title %}Settings{% endblock %}
+{% block body %}
+    <div class="diary">
+        <div class="form">
+            <div class="box_t">
+                PASSWORD
+            </div>
+                <form class="form_box" method="post">
+                    <div class="box_input">
+                        Old
+                        <input type="text" class="input_pass" name="old" required>
+                    </div>
+                    <div class="box_input">
+                        New
+                        <input type="text" class="input_pass" name="new" required>
+                    </div>
+                    <div class="{{ text }}">{{ warning }}</div>
+                    <button type="submit" class="submit">Change</button>
+                </form>
+        </div>
+        <div class="status">STATUS : <a class="cta" href="/change_status"><button class="logout">{{ status }}</button></a></div>
+        <a class="cta" href="/logout"><button class="logout">Log Out</button></a>
+    </div>
+{% endblock %}

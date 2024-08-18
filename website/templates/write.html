@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block title %}Write{% endblock %}
+{% block body %}
+    <form method="post" autocomplete="off">
+        <div class="write">
+            <div class="date">{{ date }}</div>
+            TITLE
+            <input type="text" name="title" class="title">
+            CONTENT
+            <textarea name="entry" class="text"></textarea>
+            <button type="submit" class="sign_up_button">Add Entry</button>
+        </div>
+    </form>
+{% endblock %}

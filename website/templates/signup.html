@@ -1,0 +1,29 @@
+{% extends "auth_layout.html" %}
+{% block title %}Sign Up{% endblock %}
+{% block form %}Sign Up{% endblock %}
+{% block name %}
+    <div class="input">
+        <input type="text" name="username" required>
+        <span></span>
+        <label>Username</label>
+    </div>
+{% endblock %}
+{% block details %}
+    <div class="input">
+        <input type="password" name="confirm" required>
+        <span></span>
+        <label>Confirm Password</label>
+    </div>
+    <div class="input">
+        <input type="text" name="email" required>
+        <span></span>
+        <label>E-mail Address</label>
+    </div>
+    <div class="warning">
+        {{ warning }}
+    </div>
+    <input type="submit" value="Sign Up">
+    <div class="signup_link">
+        Have an Account?<a href="/login"> Login</a>
+    </div>
+{% endblock %}

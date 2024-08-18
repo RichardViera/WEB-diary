@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="icon" href="{{url_for('static', filename='images/favicon.png')}}">
+    </head>
+    <body>
+        <header>
+            <img class="logo" src="{{url_for('static', filename='images/cube_logo.png')}}" alt="logo" onclick="window.location.assign('/')">
+            <nav>
+                <ul class="nav_links">
+                    {% if user.is_authenticated %}
+                        <li><a href="/">Diary</a></li>
+                        <li><a href="/explore">Explore</a></li>
+                        <a class="cta" href="/settings"><button>Settings</button></a>
+                    {% else %}
+                        <a class="cta" href="/login"><button>Login</button></a>
+                    {% endif %}
+                </ul>
+            </nav>
+        </header>
+        {% block body %}
+        {% endblock %}
+    </body>
+</html>

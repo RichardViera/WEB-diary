@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block title %}Explore{% endblock %}
+{% block body %}
+    <div class="search">
+        <form method="post" class="explore" autocomplete="off">
+            <div class="search_bar">
+                <input type="text" name="search" class="search_thing" value="{{ search }}">
+                <button type="submit" class="search_button">Search</button>
+            </div>
+        </form>
+        <div class="result">
+            {% for user in result %}
+                <a class="thenames" href="/user/{{ user.id }}">{{ user.username }}</a>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

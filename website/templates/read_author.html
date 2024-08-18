@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block title %}Read{% endblock %}
+{% block body %}
+    <div class="write">
+        <div>{{ entry.title }}</div>
+        <div class="date">by {{ author.username }}</div>
+        <div class="date">{{ entry.date }}</div>
+        <div class="entrybox">{{ entry.entry }}</div>
+    </div>
+{% endblock %}

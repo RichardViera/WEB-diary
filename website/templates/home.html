@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+{% block title %}Home{% endblock %}
+{% block body %}
+    {% if user.is_authenticated %}
+        <div class="diary">
+            DIARY
+            <div class="scroll">
+                <table class="entries">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                {% for diary in user.diary %}
+                    <tbody>
+                        <tr>
+                            <th><a class="title_table" href="/read/{{ diary.id }}">{{ diary.title }}</a></th>
+                            <th>{{ diary.date }}</th>
+                        </tr>
+                    </tbody>
+                {% endfor %}
+                </table>
+            </div>
+            <div class="warning">Only one entry per day</div>
+            <a class="cta" href="/write"><button class="sign_up_button">Add Entry</button></a>
+        </div>
+    {% else %}
+        <div class="sign_up">
+            START WRITING NOW
+            <a class="cta" href="/sign_up"><button class="sign_up_button">Sign Up</button></a>
+        </div>
+    {% endif %} 
+{% endblock %}
